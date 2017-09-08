@@ -36,7 +36,7 @@ def crawl():
 # more processing
 from multiprocessing import Pool
 
-pool = Pool(3)      # three processing
+pool = Pool(3)
 
 for i in range(10):
     pool.apply_async(crawl,args=())
