@@ -15,7 +15,7 @@ def translate(appKey, secretKey, fromLang, toLang, q):
     m1.update(sign.encode('utf-8'))
     sign = m1.hexdigest()
 
-    myurl = "http://openai.youdao.com/api?" \
+    myurl = "http://openapi.youdao.com/api?" \
             "appKey={appKey}&" \
             "q={q}&" \
             "from={fromLang}&" \
@@ -58,7 +58,7 @@ if __name__ == '__main__':
     s = requests.session()
     s.keep_alive = False
 
-    to_translate_words = 'luna'
+    to_translate_words = 'I love you'
     translated_words = translate(opt.appKey, opt.secretKey, opt.fromLang, opt.toLang, to_translate_words)
     if translated_words is not None:
         print(translated_words)

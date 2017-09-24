@@ -23,10 +23,10 @@ def crawl():
                     'http': 'http://%s:%s' % (ip, port),
                     'https': 'http://%s:%s' % (ip, port)
                 }
-                res = requests.get("https://kyfw.12306.cn/passport/captcha/captcha-image",verify=False,timeout=5,proxies = proxies)
+                res = requests.get("http://106.15.204.179:9200/_plugin/head/",verify=False,timeout=5,proxies = proxies)
                 if res.status_code != 200:
                     continue
-                with open('./captcha/%s.jpg'%uuid.uuid4(),'wb') as to_write:   # return code to jpg
+                with open('./text web/%s.jpg'%uuid.uuid4(),'wb') as to_write:   # return code to jpg
                     to_write.write(res.content)
                 break
             except Exception as e:
