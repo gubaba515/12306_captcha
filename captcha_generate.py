@@ -48,6 +48,6 @@ if __name__ == '__main__':
             )
             res = tps.warpImage(img,M)
             res = 255 - res
-            img_filename = os.path.join(opt.image_store_path,'%s.jpg'%uuid.uuid4())
+            img_filename = os.path.abspath(os.path.join(opt.image_store_path,'%s.jpg'%uuid.uuid4()))
             cv2.imwrite(img_filename,res)
             to_write.write('%s,%s\n'%(img_filename,line))
